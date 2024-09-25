@@ -9,9 +9,9 @@ class ModuleItemWidget extends StatelessWidget {
 
   ModuleItemWidget(
       {super.key,
-        this.isMain = false,
-        this.isSearch = false,
-        required this.moduleItem});
+      this.isMain = false,
+      this.isSearch = false,
+      required this.moduleItem});
 
   @override
   Widget build(BuildContext context) {
@@ -54,8 +54,8 @@ class VerticalModule extends StatelessWidget {
     }
 
     return Card(
-        surfaceTintColor:
-        CommonUtils.parseColor(menuProperties?.backgroundColor ?? "#ffffff"),
+        surfaceTintColor: CommonUtils.parseColor(
+            menuProperties?.backgroundColor ?? "#ffffff"),
         elevation: menuProperties?.elevation ?? 1,
         shape: RoundedRectangleBorder(
             side: BorderSide(
@@ -71,18 +71,21 @@ class VerticalModule extends StatelessWidget {
                 children: [
                   MenuItemImage(
                     imageUrl: moduleItem.moduleUrl ?? "",
-                    iconSize:  24,
+                    iconSize: 24,
                   ),
                   SizedBox(
                     height: double.parse("12"),
                   ),
-                  Flexible(child: Text(moduleItem.moduleName,
+                  Flexible(
+                      child: Text(
+                    moduleItem.moduleName,
                     textAlign: TextAlign.center,
                     style: const TextStyle(
                         fontFamily: "Myriad Pro",
                         fontSize: 12,
                         height: 1.1,
-                        color: const Color.fromARGB(255, 0, 80, 170)),))
+                        color: const Color.fromARGB(255, 0, 80, 170)),
+                  ))
                 ],
               ),
             )));
@@ -117,7 +120,7 @@ class HorizontalModule extends StatelessWidget {
 
     return Card(
         surfaceTintColor:
-        CommonUtils.parseColor(menuProperties?.backgroundColor ?? "ffffff"),
+            CommonUtils.parseColor(menuProperties?.backgroundColor ?? "ffffff"),
         elevation: menuProperties?.elevation ?? 0,
         shape: RoundedRectangleBorder(
             side: BorderSide(
@@ -142,13 +145,13 @@ class HorizontalModule extends StatelessWidget {
                   ),
                   Flexible(
                       child: MenuItemTitle(
-                        title: moduleItem.moduleName,
-                        textSize: menuProperties?.textSize,
-                        fontWeight:
+                    title: moduleItem.moduleName,
+                    textSize: menuProperties?.textSize,
+                    fontWeight:
                         menuProperties?.fontWeight?.toLowerCase() == "bold"
                             ? FontWeight.bold
                             : FontWeight.normal,
-                      ))
+                  ))
                 ],
               ),
             )));
@@ -199,9 +202,9 @@ class ModuleUtil {
       dataObject.addAll({"MerchantID": moduleItem.merchantID});
       _dynamicRequest
           .dynamicRequest(moduleItem,
-          dataObj: dataObject,
-          action: ActionType.PAYBILL,
-          url: RouteUrl.account.name)
+              dataObj: dataObject,
+              action: ActionType.PAYBILL,
+              url: RouteUrl.account.name)
           .then((value) {
         Navigator.of(context).pop();
         DynamicPostCall.processDynamicResponse(
@@ -229,17 +232,17 @@ class ModuleUtil {
         }
       case ModuleId.VIEWBENEFICIARY:
         {
+          // CommonUtils.navigateToRoute(
+          //     context: context,
+          //     widget: ViewBeneficiary(moduleItem: moduleItem));
           CommonUtils.navigateToRoute(
-              context: context,
-              widget: ViewBeneficiary(moduleItem: moduleItem));
+              context: context, widget: const ViewBeneficiaries());
           break;
         }
       case ModuleId.STANDINGORDERVIEWDETAILS:
         {
           CommonUtils.navigateToRoute(
-              context: context,
-              widget: StandingOrderScreen(
-              ));
+              context: context, widget: StandingOrderScreen());
           // CommonUtils.navigateToRoute(
           //     context: context,
           //     widget: ViewStandingOrder(moduleItem: moduleItem));
@@ -249,9 +252,7 @@ class ModuleUtil {
         {
           {
             CommonUtils.navigateToRoute(
-                context: context,
-                widget: LoanRepayment(
-                ));
+                context: context, widget: LoanRepayment());
             break;
           }
         }
@@ -259,19 +260,14 @@ class ModuleUtil {
         {
           {
             CommonUtils.navigateToRoute(
-                context: context,
-                widget: AddBeneficiary(
-                ));
+                context: context, widget: AddBeneficiary());
             break;
           }
         }
       case ModuleId.QUICKPAY:
         {
           {
-            CommonUtils.navigateToRoute(
-                context: context,
-                widget: QuickPay(
-                ));
+            CommonUtils.navigateToRoute(context: context, widget: QuickPay());
             break;
           }
         }
@@ -279,19 +275,14 @@ class ModuleUtil {
         {
           {
             CommonUtils.navigateToRoute(
-                context: context,
-                widget: RAOExistingCustomerScreen(
-                ));
+                context: context, widget: RAOExistingCustomerScreen());
             break;
           }
         }
       case ModuleId.MTNDATA:
         {
           {
-            CommonUtils.navigateToRoute(
-                context: context,
-                widget: Data(
-                ));
+            CommonUtils.navigateToRoute(context: context, widget: Data());
             break;
           }
         }

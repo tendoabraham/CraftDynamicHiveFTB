@@ -68,6 +68,7 @@ import 'package:ftbbank/src/home/StandingOrder.dart';
 import 'package:ftbbank/src/home/LoanRepayment.dart';
 import 'package:ftbbank/src/home/Data.dart';
 import 'package:ftbbank/src/home/add_beneficiary.dart';
+import 'package:ftbbank/src/home/view_beneficiaries.dart';
 import 'package:ftbbank/src/home/quick_pay.dart';
 import 'package:ftbbank/src/rao/rao_existing_customer_screen.dart';
 import 'src/builder/factory_builder.dart';
