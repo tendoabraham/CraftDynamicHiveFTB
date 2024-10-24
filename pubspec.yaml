@@ -3,8 +3,8 @@ version: 0.0.1
 publish_to: https://onepub.dev/api/fvluhnofly/
 description: A new Flutter package project.
 environment:
-  sdk: ">=2.17.0 <3.0.0"
-  flutter: ">=1.17.0"
+  sdk: ">=3.0.0 <4.0.0"
+  flutter: ">=3.0.0"
 dependencies:
   archive: ^3.3.2
   cached_network_image: ^3.2.3
