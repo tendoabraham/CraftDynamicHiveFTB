@@ -16,16 +16,19 @@ import 'package:dio/dio.dart';
 import 'package:encrypt/encrypt.dart';
 import 'package:flutter/foundation.dart' hide Key;
 import 'package:flutter/services.dart';
+import 'package:flutter_native_contact_picker/flutter_native_contact_picker.dart';
+import 'package:flutter_native_contact_picker/model/contact.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:fluttercontactpicker/fluttercontactpicker.dart'
-    hide PhoneNumber;
+import 'package:local_auth_darwin/types/auth_messages_ios.dart';
+// import 'package:fluttercontactpicker/fluttercontactpicker.dart'
+//     hide PhoneNumber;
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart' hide Response;
 import 'package:hive_flutter/adapters.dart';
 import 'package:json_annotation/json_annotation.dart';
 import 'package:local_auth/local_auth.dart';
 import 'package:local_auth_android/local_auth_android.dart';
-import 'package:local_auth_ios/local_auth_ios.dart';
+// import 'package:local_auth_ios/local_auth_ios.dart';
 import 'package:local_session_timeout/local_session_timeout.dart'
     hide SessionTimeoutState, SessionTimeoutManager;
 import 'dart:math';

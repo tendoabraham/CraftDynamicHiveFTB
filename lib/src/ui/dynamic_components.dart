@@ -1237,6 +1237,8 @@ class _DynamicPhonePickerFormWidgetState
 
   var controller = TextEditingController();
   PhoneNumber inputNumber = PhoneNumber(isoCode: APIService.countryIsoCode);
+  final FlutterNativeContactPicker _contactPicker =
+      FlutterNativeContactPicker();
 
   @override
   Widget build(BuildContext context) {
@@ -1313,20 +1315,47 @@ class _DynamicPhonePickerFormWidgetState
     );
   }
 
+  // pickPhoneContact() async {
+  //   final PhoneContact contact = await FlutterContactPicker.pickPhoneContact();
+  //   var phone = formatPhone(contact.phoneNumber?.number ?? "")
+  //       .replaceAll(RegExp(r'^0'), '')
+  //       .replaceAll(" ", "");
+  //   setState(() {
+  //     pickedcontact = phone;
+  //     controller.text = phone;
+  //   });
+  // }
+
   pickPhoneContact() async {
-    final PhoneContact contact = await FlutterContactPicker.pickPhoneContact();
-    var phone = formatPhone(contact.phoneNumber?.number ?? "")
-        .replaceAll(RegExp(r'^0'), '')
-        .replaceAll(" ", "");
-    setState(() {
-      pickedcontact = phone;
-      controller.text = phone;
-    });
+    try {
+      final Contact? contact = await _contactPicker.selectPhoneNumber();
+      if (contact != null) {
+        String formatted = formatPhone(contact.selectedPhoneNumber ?? "")
+            .replaceAll(RegExp(r'^0'), '');
+
+        PhoneNumber number = await PhoneNumber.getRegionInfoFromPhoneNumber(
+          "+256$formatted", // assuming you're always dealing with UG numbers
+          APIService.countryIsoCode,
+        );
+
+        setState(() {
+          controller.text = formatted;
+          inputNumber = number;
+        });
+      }
+    } catch (e) {
+      print("Failed to pick contact: $e");
+    }
   }
 
   String formatPhone(String phone) {
-    return phone.replaceAll(RegExp(r'\+\d{1,3}'), '');
+    String noSpace = phone.replaceAll(' ', '');
+    return noSpace.replaceAll(RegExp(r'\+\d{1,3}'), '');
   }
+
+  // String formatPhone(String phone) {
+  //   return phone.replaceAll(RegExp(r'\+\d{1,3}'), '');
+  // }
 }
 
 class DynamicListWidget implements IFormWidget {

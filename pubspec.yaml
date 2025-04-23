@@ -3,72 +3,70 @@ version: 0.0.1
 publish_to: https://onepub.dev/api/fvluhnofly/
 description: A new Flutter package project.
 environment:
-  sdk: ">=2.17.0 <3.0.0"
-  flutter: ">=1.17.0"
+  sdk: ">=2.19.0 <3.0.0"
+  flutter: ">=3.7.0"
 dependencies:
-  archive: ^3.3.2
-  cached_network_image: ^3.2.3
-  camera: ^0.10.0+4
+  archive: ^3.3.8
+  cached_network_image: ^3.4.1
+  camera: ^0.11.0+2
   date_format: ^2.0.7
   dio: ^5.1.1
-  dropdown_button2: ^1.9.1
+  dropdown_button2: ^2.3.9
   encrypt: ^5.0.1
   flutter_easyloading: ^3.0.5
   flutter_secure_storage: any
-  fluttercontactpicker: ^4.7.0
+  flutter_native_contact_picker: ^0.0.10
   group_button: ^5.2.2
   hex: ^0.2.0
-  image_picker: ^0.8.6
+  image_picker: ^1.1.2
   intl: any
   local_auth: ^2.1.2
-  local_auth_android: ^1.0.32
-  local_auth_ios: ^1.1.3
-  crypto: ^3.0.3
-  logger: ^1.1.0
-  lottie: ^2.0.0
-  package_info_plus: ^4.0.2
-  path_provider: ^2.0.11
+  local_auth_android: ^1.0.46
+  local_auth_darwin: ^1.4.2
+  crypto: ^3.0.6
+  logger: ^2.5.0
+  lottie: ^2.7.0
+  package_info_plus: ^8.1.2
+  path_provider: ^2.1.5
   provider: ^6.0.4
-  shared_preferences: ^2.0.15
-  unique_identifier: ^0.2.0
-  url_launcher: ^6.1.7
-  uuid: ^3.0.6
-  vibration: ^1.7.6
-  local_session_timeout: ^2.1.1
+  shared_preferences: ^2.3.5
+  unique_identifier: ^0.4.0
+  url_launcher: ^6.3.1
+  uuid: ^4.5.1
+  vibration: ^2.0.1
+  local_session_timeout: ^3.2.0
   get: ^4.6.5
   fluttertoast: any
-  geolocator: ^9.0.2
-  permission_handler: ^10.2.0
-  yaml: ^3.1.1
+  geolocator: ^13.0.2
+  permission_handler: ^11.3.1
+  yaml: ^3.1.3
   json_annotation: ^4.8.0
-  json_serializable: ^6.6.0
+  json_serializable: ^6.1.4
   flutter_spinkit: ^5.1.0
   rsa_encrypt: ^2.0.0
   asn1lib: ^1.4.0
   pointycastle: ^3.6.2
   pem: ^2.0.2
-  convert: ^3.1.1
+  convert: ^3.1.2
   easy_localization: ^3.0.1
-  connectivity_plus: 3.0.3
+  connectivity_plus: ^3.0.3
   hive: ^2.2.3
   hive_flutter: ^1.1.0
-  # platform_device_id: ^1.0.1
   flutter_multi_formatter: ^2.11.0
-  blur: ^3.1.0
-  logging: ^1.2.0
-  syncfusion_flutter_pdf: 21.2.8
-  share_plus: ^7.0.2
-  open_file: ^3.3.1
+  blur: ^4.0.0
+  logging: ^1.3.0
+  syncfusion_flutter_pdf: ^28.1.38
+  share_plus: ^10.1.3
+  open_file: ^3.5.10
   qr_code_scanner: 1.0.1
-  intl_phone_number_input: ^0.7.3+1
+  intl_phone_number_input: ^0.7.4
   collection: any
   flutter:
     sdk: flutter
   flutter_bloc: ^8.1.3
-  pinput: ^3.0.1
-  pdf_render: ^1.4.0
-  flutter_libphonenumber: ^2.2.2
-  # libphonenumber: ^2.0.2
+  pinput: ^5.0.0
+  pdfrx: ^1.1.23
+  flutter_libphonenumber: ^2.5.1
 
 dev_dependencies:
   flutter_lints: ^2.0.0
