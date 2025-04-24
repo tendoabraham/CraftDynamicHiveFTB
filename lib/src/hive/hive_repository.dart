@@ -267,6 +267,9 @@ class BankAccountRepository {
 
   insertBankAccounts(List<BankAccount> bankAccounts) async {
     try {
+      bankAccounts.sort((a, b) =>
+          (b.defaultAccount ? 1 : 0).compareTo(a.defaultAccount ? 1 : 0));
+
       var box = await openBox();
       await box.clear();
       box.addAll(bankAccounts);
